@@ -1,0 +1,42 @@
+ASSUMPTIONS:
+-user must input at least one extra value than the number of bits required to store a value in binary format.
+-We create a variable "fp" (final product) whose initial letters shows value of accumulator register after the accumulator,it contains the values of Q register and the last character we add for the Q-1 bit
+-inspite of having different variables for accumulator register,Q register and Q-1 bit ,we save them in "fp"
+-to add variable 1 to accumulator register we create a variable "m" which contain binary value of variable 1 followed by sufficient number of zero's so that we can directly add to it, avoiding considering them individually
+-similar variable for deleting 1st value from accumulator register.
+
+
+***************************************************EXPLANATION OF CODE****************************************************************
+We make functions(wokings are explained in the comments itself):
+1> twocom(s):This function takes a binary value and returns the two's complement of it
+2> badd(a,b):This function takes two binary number and returns the sum in binary
+3> rshif(s):This function takes binary number and returns arithmetic shift right value
+
+We than take values of multiplicand(a) and multiplier(b) from the user
+We ask the user to put the number of bits available (for each multiplicand and multiplier)
+We convert the given value to binary(to two's complement if number is negative)
+user input the values of bits(alen and blen)
+We initialise "fp" ,initially the accumulator part contains series of 0's and Q-1 has value 0
+We create initialise variables "m" and "mm"
+Now we enter the iteration part
+	we create and print a variable "c" which contain Q0Q-1 value-that's the last two digit of fp variable
+	we check the value of "c" 
+		if its 01 we add "m" to "fp"
+		if its 00 we add "mm" to "fp"
+	we then call rshift for arithmetic shift right of "fp"
+	print the value of accumulator register,Q register,and Q-1 bit
+we finally print the final product "fp"
+
+******************************************************************************************************************************************
+
+CONSTRAINTS:
+-floating point value is not allowed
+-user have to enter the number of bits
+
+
+
+
+
+
+
+
